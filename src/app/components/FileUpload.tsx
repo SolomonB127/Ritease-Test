@@ -2,6 +2,7 @@
 import React from 'react';
 import { useDropzone } from "react-dropzone";
 import { useAnnotationState } from '../store/useAnnotationStore';
+import { Input } from '@/components/ui/input';
 
 const FileUpload = () => {
     const setPdfFile = useAnnotationState((state) => state.setPdfFile);
@@ -15,7 +16,7 @@ const FileUpload = () => {
 
     return (
         <div {...getRootProps()} className='p-8 border-2 border-dashed rounded-lg text-center cursor-pointer'>
-            <input {...getInputProps()} />
+            <Input {...getInputProps()} />
             {isDragActive ? (
                 <p>Drop PDF File here...</p>
             ) : (
